@@ -4,6 +4,6 @@
 #include "specs.h"
 #include <math.h>
 
-void eucSW (T A[LENGTH], T B[LENGTH], Tout C[1]);
+void eucSW (T A[LENGTH], T B[LENGTH], float C[1]);
 
 #endif

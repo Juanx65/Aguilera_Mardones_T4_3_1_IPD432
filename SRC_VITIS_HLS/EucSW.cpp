@@ -1,6 +1,6 @@
 #include "eucSW.h"
 
-void eucSW (T A[LENGTH], T B[LENGTH],Tout C[1])
+void eucSW (T A[LENGTH], T B[LENGTH],float C[1])
 {
 	C[0] = 0;
 	for (int i = 0; i < LENGTH; i++)

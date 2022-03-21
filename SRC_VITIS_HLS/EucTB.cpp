@@ -8,17 +8,18 @@
 using namespace std;
 
 void genRandArray(int min, int max, int size, T *array);
-int compare(Tout* gold, Tout* result, int size, double th);
+int compare(float* gold, Tout* result, int size, double th);
 
 int main (){
 	int errors = 0;
 	int tests = 100;
 
 	T A[LENGTH], B[LENGTH];
-	Tout C_HW[1], C_SW[1];
+	Tout C_HW[1];
+	float C_SW[1];
 
 	double diff;
-	double th = 2;//0.000001; // vamos a aceptar un error bastante alto, el cual se reduce considerablemente con el uso de flotantes en el resultado.
+	double th = 0.9; // vamos a aceptar un error bastante alto, el cual se reduce considerablemente con el uso de flotantes en el resultado.
 	int min = 0;
 	int max = 254;
 	cout << "Euc Dist calculation: "<< endl;
@@ -46,7 +47,7 @@ void genRandArray(int min, int max, int size, T *array){
     }
 }
 
-int compare(Tout* gold, Tout* result, int size, double th){
+int compare(float* gold, Tout* result, int size, double th){
         int errors = 0;
         double dif = 0;
         for (int i=0; i<size; i++){

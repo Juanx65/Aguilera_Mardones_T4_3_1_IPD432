@@ -55,6 +55,13 @@ Para reproducir la implementación del coprocesador mediante Vivado se utilizan 
 
 ![Vivado Project IP.](/Imagenes_Readme/import_ip.gif)
 
+* En ```PROGRAM AND DEBUG``` genera el Bitstream.
+
+* Abrir ```Open Hardware Manager```, ```Open Target```, ```Program Device```.
+
+* Usando el script de Matlab ```\MATLAB\coprocessorTesting.m``` pruebe los los resultados de la distancia euclidiana para vectores aleatorios.
+
+
 ### Uso de pragmas
 
 ### Reporte de frecuencia latencia y throughtput
