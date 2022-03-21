@@ -36,7 +36,7 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 * Exportar IP usando ```Export RTL```. Esta accion genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrara más adelante.
 
-### Pasos de implementación
+### Implementación usando Vivado
 
 Para reproducir la implementación del coprocesador mediante Vivado se utilizan los archivos fuente en la carpeta ``` \SRC_VIVADO_DESIGN``` dentro de este repositorio y seguir las instrucciones a continuación:
 
@@ -48,6 +48,12 @@ Para reproducir la implementación del coprocesador mediante Vivado se utilizan 
 * En ```Default Part```, ```Boards``` elegir ```Nexys4 DDR```, si es necesario, descargar y Finalizar.
 
 ![Vivado Project process.](/Imagenes_Readme/create_vivado_project.gif)
+
+* En el menu ```PROJECT MANAGER``` ir a ```IP Catalog```.
+* En la ventana ```IP Catalog``` hacer click derecho y elegir la opcion ```Add Repository...```
+* Elegir la carpeta ```\SRC_VIVADO_DESIGN\IP_SRC_eucHW\eucDistHW_512```. Esta carpeta deberia ser equivalente a la creada en el tutorial en VITIS HLS.
+
+![Vivado Project IP.](/Imagenes_Readme/import_ip.gif)
 
 ### Uso de pragmas
 
