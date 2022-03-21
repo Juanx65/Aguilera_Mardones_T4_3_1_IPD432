@@ -20,7 +20,7 @@ Para reproducir la sintesis del coprocesador mediante Vitis HLS se utilizan los 
 * Elegir un nombre y ubicación para el proyecto creado.
 * Añadir los archivos fuente del repositorio donde se debe elegir la función principal, en este caso, ```EucHW```, como se muestra en la Figura siguiente:
 
-![Archivos añadidos.](/Images_Readme/Vits_HLS_Files.png)
+![Archivos añadidos.](/Imagenes_Readme/Vits_HLS_Files.png)
 * 
 ## Pasos de implementación
 
