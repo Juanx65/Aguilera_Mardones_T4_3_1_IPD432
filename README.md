@@ -26,19 +26,33 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 ![Device part.](/Imagenes_Readme/device.png)
 
-* Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```
-obs: es importante notar que se usa un periodo de 10 ns, el cual concuerda con los resultados obtenidos más adelante para el WNS obtenido...
+* Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```. Es importante notar que se usa un periodo de 10 ns, el cual concuerda con los resultados obtenidos más adelante, permitiendo un WNS positivo.
 
-* Ejecutar la Cosimulación con ``` Run Cosimulation ```
+* La síntesis da resultados de timing, latencia y recursos satisfactorios, estos se muestran en la Figura siguiente:
 
-* Exportar IP usando ```Export RTL``` 
+![Device part.](/Imagenes_Readme/performance_hls.png)
 
-## Pasos de implementación
+ * Ejecutar la Cosimulación con ``` Run Cosimulation ```. El error obtenido es bastante alto, en torno a una unidad, el cual proviene de la función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library) proporcionada por Xilinx, además del uso de enteros. El error se justifica, ya que esta función permite disminuir la latencia del procesador en 55 ciclos. En el caso de usar variables del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta considerablemente.
 
-## Uso de pragmas
+* Exportar IP usando ```Export RTL```. Esta accion genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrara más adelante.
 
-## Reporte de frecuencia latencia y throughtput
+### Pasos de implementación
 
-## Uso de recursos
+Para reproducir la implementación del coprocesador mediante Vivado se utilizan los archivos fuente en la carpeta ``` \SRC_VIVADO_DESIGN``` dentro de este repositorio y seguir las instrucciones a continuación:
 
-## Tiempo de sintesis
+* Abrir Vivado y crear un nuevo proyecto con ```Create Project```.
+* Elegir un nombre y directorio para el proyecto.
+* Solo seleccionar ```RTL project```.
+* En ```Add Source``` seleccionar ```Add Directories``` y seleccionar la carpeta ```\SRC_VIVADO_DESIGN\VIVADO_SRC\src``` que se encuentran en este repositorio.
+* En ```Add Constraints``` seleccionar ```Add File``` y seleccionar el archivo ```\SRC_VIVADO_DESIGN\VIVADO_SRC\constraint\Nexys-4-DDR-Master.xdc``` presente en el respoitorio.
+* En ```Default Part```, ```Boards``` elegir ```Nexys4 DDR```, si es necesario, descargar y Finalizar.
+
+![Vivado Project process.](/Imagenes_Readme/create_vivado_project.gif)
+
+### Uso de pragmas
+
+### Reporte de frecuencia latencia y throughtput
+
+### Uso de recursos
+
+### Tiempo de sintesis
