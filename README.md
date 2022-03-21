@@ -23,8 +23,15 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 ![Archivos añadidos.](/Imagenes_Readme/Vitis_HLS_Files.png)
 
 * Elegir nombre para la solución, así como especificar el código de FPGA a utilizar, en este caso ```XC7A100TCSG324-1``` como se muestra a continuación:
-* 
-![.](/Imagenes_Readme/device.png)
+
+![Device part.](/Imagenes_Readme/device.png)
+
+* Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```
+obs: es importante notar que se usa un periodo de 10 ns, el cual concuerda con los resultados obtenidos más adelante para el WNS obtenido...
+
+* Ejecutar la Cosimulación con ``` Run Cosimulation ```
+
+* Exportar IP usando ```Export RTL``` 
 
 ## Pasos de implementación
 
