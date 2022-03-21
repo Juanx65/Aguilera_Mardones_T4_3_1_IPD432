@@ -2,7 +2,7 @@
 
 Grupo Juan Aguilera - Ricardo Mardones
 
-El propósito de este proyecto es el de mostrar la construcción de un coprocesador que soporta el cálculo de la distancia euclidiana entre vectores de 1024 palabras de 8 bits cada una.
+El propósito de este proyecto es el de ilustrar el proceso de diseño de un coprocesador que soporta el cálculo de la distancia euclidiana entre vectores de 1024 palabras de 8 bits cada una.
 El proyecto se elaboró usando las siguientes plataformas:
 
 * Vitis HLS 2021.1
@@ -11,19 +11,19 @@ El proyecto se elaboró usando las siguientes plataformas:
 
 El proyecto se desarrollo en el SO Windows 10 /  Windwos 11.
 
-## Guia
+## Guía
 ### Procesador de vectores usando HLS para Nexys4 DDR
 
-Para reproducir la sintesis del coprocesador mediante Vitis HLS se utilizan los archivos fuente en la carpeta ``` \SRC_VITIS_HLS``` dentro de este repositorio y seguir las siguientes instrucciónes:
+Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los archivos fuente en la carpeta ``` \SRC_VITIS_HLS``` dentro de este repositorio y seguir las instrucciones a continuación:
 
-* Abrir Vits HLS 2021.1, eligiendo la opcion ```Create Project```.
+* Abrir Vitis HLS 2021.1, eligiendo la opción ```Create Project```.
 * Elegir un nombre y ubicación para el proyecto creado.
-* Añadir los archivos fuente del repositorio donde se deben subir los archivos de diseño asi como elegir la función principal, en este caso, ```EucHW```. Luego se pide subir los archivos para generar los Testbench, como se muestra en la Figura siguiente:
+* Añadir los archivos fuente del repositorio donde se deben subir los archivos de diseño así como elegir la función principal, en este caso, ```EucHW```. Luego se pide subir los archivos para generar los Testbench, como se muestra en la Figura siguiente:
 
 ![Archivos añadidos.](/Imagenes_Readme/Vitis_HLS_Files.png)
 
-* Elegir nombre para la solución, asi como especificar el codigo de de FPGA a utilizar, en este caso ```XC7A100TCSG324-1``` como se muestra a continuación:
-
+* Elegir nombre para la solución, así como especificar el código de FPGA a utilizar, en este caso ```XC7A100TCSG324-1``` como se muestra a continuación:
+* 
 ![.](/Imagenes_Readme/device.png)
 
 ## Pasos de implementación
