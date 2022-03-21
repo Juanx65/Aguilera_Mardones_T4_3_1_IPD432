@@ -22,7 +22,7 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 ![Archivos añadidos.](/Imagenes_Readme/Vitis_HLS_Files.png)
 
-* Elegir nombre para la solución, así como especificar el código de FPGA a utilizar, en este caso ```XC7A100TCSG324-1``` como se muestra a continuación:
+* Elegir nombre para la solución, así como especificar la tarjeta de desarrollo utilizada seleccionando en ```Part Selection```, ```Parts```,  ```XC7A100TCSG324-1``` como se muestra a continuación:
 
 ![Device part.](/Imagenes_Readme/device.png)
 
