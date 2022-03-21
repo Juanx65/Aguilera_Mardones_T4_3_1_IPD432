@@ -18,11 +18,11 @@ Para reproducir la sintesis del coprocesador mediante Vitis HLS se utilizan los 
 
 * Abrir Vits HLS 2021.1, eligiendo la opcion ```Create Project```.
 * Elegir un nombre y ubicación para el proyecto creado.
-* Añadir los archivos fuente del repositorio donde se debe elegir la función principal, en este caso, ```EucHW```, como se muestra en la Figura siguiente:
+* Añadir los archivos fuente del repositorio donde se deben subir los archivos de diseño asi como elegir la función principal, en este caso, ```EucHW```. Luego se pide subir los archivos para generar los Testbench, como se muestra en la Figura siguiente:
 
 ![Archivos añadidos.](/Imagenes_Readme/Vitis_HLS_Files.png)
 
-* Elegir nombre para la solución, asi como especificar el codigo de de FPGA a utilizar, en este caso ```XC7A100TCSG-1``` como se muestra a continuación:
+* Elegir nombre para la solución, asi como especificar el codigo de de FPGA a utilizar, en este caso ```XC7A100TCSG324-1``` como se muestra a continuación:
 
 ![.](/Imagenes_Readme/device.png)
 
