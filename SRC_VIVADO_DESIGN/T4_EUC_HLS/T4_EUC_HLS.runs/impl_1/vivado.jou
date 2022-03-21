@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Mon Mar 21 01:11:24 2022
+# Process ID: 6636
+# Current directory: C:/Users/juan_/Desktop/Aguilera_Mardones_T4_3_1_IPD432/SRC_VIVADO_DESIGN/T4_EUC_HLS/T4_EUC_HLS.runs/impl_1
+# Command line: vivado.exe -log TOP.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TOP.tcl -notrace
+# Log file: C:/Users/juan_/Desktop/Aguilera_Mardones_T4_3_1_IPD432/SRC_VIVADO_DESIGN/T4_EUC_HLS/T4_EUC_HLS.runs/impl_1/TOP.vdi
+# Journal file: C:/Users/juan_/Desktop/Aguilera_Mardones_T4_3_1_IPD432/SRC_VIVADO_DESIGN/T4_EUC_HLS/T4_EUC_HLS.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source TOP.tcl -notrace
