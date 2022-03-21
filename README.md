@@ -20,8 +20,12 @@ Para reproducir la sintesis del coprocesador mediante Vitis HLS se utilizan los 
 * Elegir un nombre y ubicación para el proyecto creado.
 * Añadir los archivos fuente del repositorio donde se debe elegir la función principal, en este caso, ```EucHW```, como se muestra en la Figura siguiente:
 
-![Archivos añadidos.](/Imagenes_Readme/Vits_HLS_Files.png)
-* 
+![Archivos añadidos.](/Imagenes_Readme/Vitis_HLS_Files.png)
+
+* Elegir nombre para la solución, asi como especificar el codigo de de FPGA a utilizar, en este caso ```XC7A100TCSG-1``` como se muestra a continuación:
+
+![.](/Imagenes_Readme/device.png)
+
 ## Pasos de implementación
 
 ## Uso de pragmas
