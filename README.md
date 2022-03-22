@@ -11,6 +11,10 @@ El proyecto se elaboró usando las siguientes plataformas:
 
 El proyecto se desarrollo en el SO Windows 10 /  Windwos 11.
 
+Los tiempos estimpados de sintesis e implementación fueron tomados operando en un computador con las siguientes caracterisiticas:
+* Procesador: Intel Core i7-10750H CPU @ 2.60GHz
+* Memoria (RAM): 12 GB
+
 ## Guía
 ### Procesador de vectores usando HLS para Nexys4 DDR
 
@@ -36,6 +40,28 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 * Exportar IP usando ```Export RTL```. Esta accion genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrara más adelante.
 
+### Uso de pragmas en Vitis HLS
+
+En esta sección se explica el uso de los pragmas implementados al realizar la sección anterior, siguiendo la función definida en ```\SRC_VITIS_HLS\EucHW.cpp```, que se muestra a continuación:
+
+```cpp
+void eucHW (T A[LENGTH], T B[LENGTH], Tout C[1])
+{
+	#pragma HLS array_reshape variable=A type=cyclic  factor=512 dim=1
+	#pragma HLS array_reshape variable=B type=cyclic  factor=512 dim=1
+
+	Tout result = 0;
+	sumLoop:for(int i=0;i<LENGTH;i++)
+	{
+		#pragma HLS UNROLL factor=512
+		result += (A[i]-B[i])*(A[i]-B[i]);
+	}
+	C[0] =  hls::sqrt(result);
+	return;
+}
+```
+
+
 ### Implementación usando Vivado
 
 Para reproducir la implementación del coprocesador mediante Vivado se utilizan los archivos fuente en la carpeta ``` \SRC_VIVADO_DESIGN``` dentro de este repositorio y seguir las instrucciones a continuación:
@@ -60,9 +86,6 @@ Para reproducir la implementación del coprocesador mediante Vivado se utilizan 
 * Abrir ```Open Hardware Manager```, ```Open Target```, ```Program Device```.
 
 * Usando el script de Matlab ```\MATLAB\coprocessorTesting.m``` pruebe los los resultados de la distancia euclidiana para vectores aleatorios.
-
-
-### Uso de pragmas
 
 ### Reporte de frecuencia latencia y throughtput
 
