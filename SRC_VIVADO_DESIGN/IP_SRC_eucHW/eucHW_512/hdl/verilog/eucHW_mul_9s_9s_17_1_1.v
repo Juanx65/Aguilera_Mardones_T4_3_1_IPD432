@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps
 
-module eucHW_mul_9s_9s_18_1_1(din0, din1, dout);
+module eucHW_mul_9s_9s_17_1_1(din0, din1, dout);
 parameter ID = 1;
 parameter NUM_STAGE = 0;
 parameter din0_WIDTH = 14;

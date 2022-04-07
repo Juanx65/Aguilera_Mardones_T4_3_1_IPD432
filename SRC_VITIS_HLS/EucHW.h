@@ -7,5 +7,5 @@
                         * que disminuye la latencia respecto a sdt::sqrt,
                         * con el costo de tener un mayor error.
                         */
-void eucHW (T A[LENGTH], T B[LENGTH], Tout C[1]);
+void eucHW (T A[LENGTH], T B[LENGTH], Tout *C);
 #endif

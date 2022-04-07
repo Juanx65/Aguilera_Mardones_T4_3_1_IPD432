@@ -112,7 +112,6 @@ module TOP
     );
     */
     
-    
     //WRAPPER
     
     logic [NBITS*BR_SIZE-1:0] Awrapped;
@@ -133,10 +132,19 @@ module TOP
     logic [NBITS*BR_SIZE/2-1:0] Awp;
     logic [NBITS*BR_SIZE/2-1:0] Bwp;
     
-    logic A_ce0, B_ce0;
+    logic A_ce0, B_ce0, A_syc, B_syc, A_pre, B_pre;
     
-    assign Awp = (A_ce0)? Awrapped[NBITS*BR_SIZE/2-1:0]:Awrapped[NBITS*BR_SIZE-1:NBITS*BR_SIZE/2];
-    assign Bwp = (B_ce0)? Bwrapped[NBITS*BR_SIZE/2-1:0]:Bwrapped[NBITS*BR_SIZE-1:NBITS*BR_SIZE/2];
+    always_ff @(posedge CLK100MHZ) begin
+        A_pre <= A_ce0;
+        B_pre <= B_ce0;
+		A_syc <= A_pre;
+		B_syc <= B_pre;
+	end
+    
+    assign Awp = (A_syc)? Awrapped[NBITS*BR_SIZE/2-1:0]:Awrapped[NBITS*BR_SIZE-1:NBITS*BR_SIZE/2];
+    assign Bwp = (B_syc)? Bwrapped[NBITS*BR_SIZE/2-1:0]:Bwrapped[NBITS*BR_SIZE-1:NBITS*BR_SIZE/2];
+    
+    
     
     // instancia IP
     eucHW_0 PROCC (
@@ -155,6 +163,7 @@ module TOP
   .B_q0(Bwp),              // input wire [4095 : 0] B_q0
   .C(data32)                    // output wire [31 : 0] C
 );
+
    /*
     eucHW_0 PROCC (
     .C_ap_vld(flag_ready32),  // output wire C_ap_vld

@@ -184,7 +184,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>49d7bc9a</spirit:value>
+            <spirit:value>1d420698</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -200,7 +200,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>0acb33ec</spirit:value>
+            <spirit:value>927a2dbc</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -216,7 +216,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6286bf86</spirit:value>
+            <spirit:value>887a6b5c</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -232,7 +232,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f89ccef2</spirit:value>
+            <spirit:value>5ca3e7c5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -501,15 +501,11 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/eucHW_mac_muladd_9s_9s_18s_18_4_1.v</spirit:name>
+        <spirit:name>hdl/verilog/eucHW_mul_9s_9s_17_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/eucHW_mul_9s_9s_18_1_1.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/eucHW_sqrt_fixed_32_32_s.v</spirit:name>
+        <spirit:name>hdl/verilog/eucHW_sqrt_fixed_27_27_s.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -520,17 +516,12 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/verilog/eucHW_mac_muladd_9s_9s_18s_18_4_1.v</spirit:name>
+        <spirit:name>hdl/verilog/eucHW_mul_9s_9s_17_1_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/eucHW_mul_9s_9s_18_1_1.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/verilog/eucHW_sqrt_fixed_32_32_s.v</spirit:name>
+        <spirit:name>hdl/verilog/eucHW_sqrt_fixed_27_27_s.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -548,37 +539,28 @@
         <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/eucHW_mac_muladd_9s_9s_18s_18_4_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/eucHW_mul_9s_9s_17_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/eucHW_mul_9s_9s_18_1_1.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/eucHW_sqrt_fixed_32_32_s.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/eucHW_sqrt_fixed_27_27_s.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
         <spirit:name>hdl/vhdl/eucHW.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_bf374d67</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_000d454f</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_vhdlbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>hdl/vhdl/eucHW_mac_muladd_9s_9s_18s_18_4_1.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/eucHW_mul_9s_9s_17_1_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/eucHW_mul_9s_9s_18_1_1.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdl/vhdl/eucHW_sqrt_fixed_32_32_s.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/eucHW_sqrt_fixed_27_27_s.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -640,7 +622,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">19</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="5">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -657,8 +639,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Euchw</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2112421960</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-03-18T05:40:56Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2112450946</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-04-07T08:46:15Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -667,9 +649,9 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c548cca3"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ceb51f08"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6310f3b5"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="6d2de894"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c3e7aaa2"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="ca4ce66c"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

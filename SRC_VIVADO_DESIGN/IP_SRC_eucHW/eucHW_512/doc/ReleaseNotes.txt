@@ -4,7 +4,7 @@
 # ==============================================================
 
 Family       : artix7
-Device       : xc7a12ti
-Package      : -csg325
-Speed Grade  : -1L
+Device       : xc7a100t
+Package      : -csg324
+Speed Grade  : -1
 Clock Period : 10.000 ns
