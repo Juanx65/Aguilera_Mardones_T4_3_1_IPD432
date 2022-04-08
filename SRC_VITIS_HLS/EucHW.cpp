@@ -22,5 +22,3 @@ void eucHW (T A[LENGTH], T B[LENGTH], Tout *C)
 	*C= hls::sqrt(result);
 	return;
 }
-
-SS
