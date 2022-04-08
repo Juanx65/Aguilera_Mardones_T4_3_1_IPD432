@@ -30,13 +30,13 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 ![Device part.](/Imagenes_Readme/device.png)
 
-* Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```. Es importante notar que se usa un periodo de 10 ns, el cual concuerda con los resultados obtenidos más adelante, permitiendo un WNS positivo.
+* Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```. Es importante notar que se usa un periodo de 10 ns.
 
 * La síntesis da resultados de timing, latencia y recursos satisfactorios, estos se muestran en la Figura siguiente:
 
 ![Device part.](/Imagenes_Readme/performance_hls.png)
 
- * Ejecutar la Cosimulación con ``` Run Cosimulation ```. El error obtenido es bastante alto, en torno a una unidad, el cual proviene de la función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library) proporcionada por Xilinx, además del uso de enteros. El error se justifica, ya que esta función permite disminuir la latencia del procesador en 55 ciclos. En el caso de usar variables del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta considerablemente.
+ * Ejecutar la Cosimulación con ``` Run Cosimulation ```. El error esta en torno a una unidad, debido a que estamso trabajando con numeros enteros comparados con flotantes. La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library) proporcionada por Xilinx tambien aumenta este error, el cual se justifica, ya que esta función permite disminuir la latencia del procesador en 55 ciclos. En el caso de usar variables del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta considerablemente.
 
 * Exportar IP usando ```Export RTL```. Esta accion genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrara más adelante.
 

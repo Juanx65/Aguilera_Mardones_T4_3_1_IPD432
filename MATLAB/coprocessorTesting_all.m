@@ -56,7 +56,7 @@ end
  fprintf("END TESTS");
 
 %%
-avg_err = sum(AVG_ERR)/TESTSS
+avg_err = sum(AVG_ERR)/TESTS
 
 
 
