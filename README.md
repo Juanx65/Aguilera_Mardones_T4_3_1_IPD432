@@ -13,12 +13,12 @@ El proyecto se desarrollo en el SO Windows 10 /  Windwos 11.
 
 Los tiempos estimpados de sintesis e implementación fueron tomados operando en un computador con las siguientes caracterisiticas:
 * Procesador: Intel Core i7-10750H CPU @ 2.60GHz
-* Memoria (RAM): 12 GB
+* Memoria (RAM): 12 GB @ 2933 MHz
 
 ## Guía
-### Procesador de vectores usando HLS para Nexys4 DDR
+### Procesador de vectores usando HLS para Nexys 4 DDR
 
-Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los archivos fuente en la carpeta ``` \SRC_VITIS_HLS``` dentro de este repositorio y seguir las instrucciones a continuación:
+Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los archivos fuente en la carpeta ``` \SRC_VITIS_HLS``` dentro de este repositorio, con los cuales se suiguen las instrucciones a continuación:
 
 * Abrir Vitis HLS 2021.1, eligiendo la opción ```Create Project```.
 * Elegir un nombre y ubicación para el proyecto creado.
@@ -45,18 +45,18 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 En esta sección se explica el uso de los pragmas implementados al realizar la sección anterior, siguiendo la función definida en ```\SRC_VITIS_HLS\EucHW.cpp```, que se muestra a continuación:
 
 ```cpp
-void eucHW (T A[LENGTH], T B[LENGTH], Tout C[1])
+void eucHW (T A[LENGTH], T B[LENGTH], Tout *C)
 {
-	#pragma HLS array_reshape variable=A type=cyclic  factor=512 dim=1
-	#pragma HLS array_reshape variable=B type=cyclic  factor=512 dim=1
+	#pragma HLS ARRAY_RESHAPE variable=A type=cyclic factor=512 dim=1
+	#pragma HLS ARRAY_RESHAPE variable=B type=cyclic factor=512 dim=1
 
-	Tout result = 0;
+	uint26_t result=0;
 	sumLoop:for(int i=0;i<LENGTH;i++)
 	{
 		#pragma HLS UNROLL factor=512
-		result += (A[i]-B[i])*(A[i]-B[i]);
+		result +=  (A[i]-B[i])*(A[i]-B[i]);
 	}
-	C[0] =  hls::sqrt(result);
+	*C= hls::sqrt(result);
 	return;
 }
 ```
