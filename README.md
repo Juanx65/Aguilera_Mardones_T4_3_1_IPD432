@@ -40,9 +40,9 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 ![Device part.](/Imagenes_Readme/performance_hls.png)
 
- * Ejecutar la Cosimulación con ``` Run Cosimulation ```. El error esta en torno a una unidad, debido a que estamso trabajando con numeros enteros comparados con flotantes. La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library) proporcionada por Xilinx tambien aumenta este error, el cual se justifica, ya que esta función permite disminuir la latencia del procesador en 55 ciclos. En el caso de usar variables del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta considerablemente.
+ * Para validar el diseño se ejecuta la Cosimulación  haciendo click en botón de ``` Run Cosimulation ``` ubicado en la sección ```Flow Navigator ```. El error esta por debajo del 1%, el cual es debido a que estamso trabajando con numeros enteros comparados con flotantes. La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library)  tambien aumenta este error, el cual se justifica, ya que esta función permite disminuir la latencia del procesador en 16 ciclos. En el caso de usar variables del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta considerablemente.
 
-* Exportar IP usando ```Export RTL```. Esta accion genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrara más adelante.
+* Exportar IP usando ```Export RTL```. Esta acción genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrará más adelante.
 
 ### Uso de pragmas en Vitis HLS
 
@@ -87,12 +87,28 @@ Para reproducir la implementación del coprocesador mediante Vivado se utilizan 
 
 * En ```PROGRAM AND DEBUG``` genera el Bitstream.
 
-* Abrir ```Open Hardware Manager```, ```Open Target`Si ``, ```Program Device```.
+* Abrir ```Open Hardware Manager```, ```Open Target`Si ```, ```Program Device```.
 
 * Usando el script de Matlab ```\MATLAB\coprocessorTesting.m``` pruebe los los resultados de la distancia euclidiana para vectores aleatorios.
 
-### Reporte de frecuencia latencia y throughtput
+ Adicionalmente, se programó el script de Matlab ``` \MATLAB\coprocessorTesting_all.m ``` donde se generan 1000 instancias de prueba, donde llegamos a un error promedio de 0.24, el cual es menor al 1% de error promedio.
+
+### Reporte de frecuencia, latencia y throughtput
+
+El proyecto se implemento con una frecuencia de 100 MHz, como se sugeira en la sintesis de HLS. Los resultados finales muestran que se cumplen todas las restricciones de timepo, logrando un WNS de 0.081 ns, como se muestra en la Figura siguiente:
+
+![Vivado Project IP.](/Imagenes_Readme/time_summary.png)
 
 ### Uso de recursos
 
+El uso de recursos se muestra en la Figura siguiente:
+
+![Vivado Project IP.](/Imagenes_Readme/uso_recursos.png)
+
+
+
 ### Tiempo de sintesis
+
+* Sintesis (HLS) = 4 minutos 38 segundos
+* Sintesis (Vivado) = 5 minutos 40 segundos
+* Implementacion = 10 minutos 47 segundos

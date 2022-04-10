@@ -19,6 +19,6 @@ void eucHW (T A[LENGTH], T B[LENGTH], Tout *C)
 		#pragma HLS UNROLL factor=512
 		result +=  (A[i]-B[i])*(A[i]-B[i]);
 	}
-	*C= hls::sqrt(result);
+	*C=  hls::sqrt(result);
 	return;
 }
