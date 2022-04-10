@@ -3,32 +3,31 @@
 Grupo Juan Aguilera - Ricardo Mardones
 
 El propósito de este proyecto es el de ilustrar el proceso de diseño de un coprocesador que soporta el cálculo de la distancia euclidiana entre vectores de 1024 palabras de 8 bits cada una.
-El proyecto se elaboró usando las siguientes plataformas:
+El proyecto se desarrolló usando las siguientes herramientas:
 
-* Vitis HLS 2021.1
-* Vivado 2021.1
-* Nexys 4 DDR
+* Software  Vitis HLS 2021.1
+* Software Vivado 2021.1
+* Tarjeta de desarrollo Nexys 4 DDR
 
-El proyecto se desarrollo en el SO Windows 10 /  Windwos 11.
+El sistema operativo utilizado fue Windows 10 /  Windwos 11.
 
-Los tiempos estimpados de sintesis e implementación fueron tomados operando en un computador con las siguientes caracterisiticas:
+Los tiempos estimados de síntesis e implementación fueron tomados operando en un computador con las siguientes caracterisiticas:
+
 * Procesador: Intel Core i7-10750H CPU @ 2.60GHz
 * Memoria (RAM): 12 GB @ 2933 MHz
 
-## Guía
+## Guía para replicar resulados
 ### Procesador de vectores usando HLS para Nexys 4 DDR
 
-Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los archivos fuente en la carpeta ``` \SRC_VITIS_HLS``` dentro de este repositorio, con los cuales se suiguen las instrucciones a continuación:
+Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los archivos fuente que se encuentran en  la carpeta ``` \SRC_VITIS_HLS``` dentro de este repositorio. Se deben seguir  las instrucciones descritas  a continuación:
 
-* Abrir Vitis HLS 2021.1, eligiendo la opción ```Create Project```.
-* Elegir un nombre y ubicación para el proyecto creado.
-* Añadir los archivos fuente del repositorio donde se deben subir los archivos de diseño así como elegir la función principal, en este caso, ```EucHW```. Luego se pide subir los archivos para generar los Testbench, como se muestra en la Figura siguiente:
+* Abrir Vitis HLS 2021.1, seleccionando la opción ```Create Project```.
+* Elegir un nombre y ubicación para el proyecto creado y hacer click en  el botón ```Next > ```.
+* Añadir los archivos fuente del repositorio donde se deben subir los archivos de diseño así como elegir la función principal, en este caso, ```EucHW```. Luego se pide subir los archivos para generar los Testbench.
 
-![Archivos añadidos.](/Imagenes_Readme/Vitis_HLS_Files.png)
+* Elegir nombre para la solución, así como especificar la tarjeta de desarrollo utilizada seleccionando en ```Part Selection```, ```Parts```,  ```XC7A100TCSG324-1``` .
 
-* Elegir nombre para la solución, así como especificar la tarjeta de desarrollo utilizada seleccionando en ```Part Selection```, ```Parts```,  ```XC7A100TCSG324-1``` como se muestra a continuación:
-
-![Device part.](/Imagenes_Readme/device.png)
+![Device part.](/Imagenes_Readme/Start_HLS.gif)
 
 * Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```. Es importante notar que se usa un periodo de 10 ns.
 
