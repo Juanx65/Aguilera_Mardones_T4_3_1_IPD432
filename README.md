@@ -23,15 +23,20 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 * Abrir Vitis HLS 2021.1, seleccionando la opción ```Create Project```.
 * Elegir un nombre y ubicación para el proyecto creado y hacer click en  el botón ```Next > ```.
-* Añadir los archivos fuente del repositorio donde se deben subir los archivos de diseño así como elegir la función principal, en este caso, ```EucHW```. Luego se pide subir los archivos para generar los Testbench.
+* Añadir los archivos fuente correspondientes a archivos de diseño, estos son ```EucHW.cpp```, ```EucHW.h``` y  ```specs.h```. En esta misma ventana se debe definir la función principal, en este caso, ```EucHW```. Luego  hacer click en  el botón ```Next > ```.
+* Añadir los archivos fuente correspondientes a archivos de <em>testbench</em>, estos son ```EucSW.cpp```, ```EucSW.h``` y  ```EucTB.cpp```. Luego  hacer click en  el botón ```Next > ```.
 
-* Elegir nombre para la solución, así como especificar la tarjeta de desarrollo utilizada seleccionando en ```Part Selection```, ```Parts```,  ```XC7A100TCSG324-1``` .
+* Elegir nombre para la solución, escoger el periodo del reloj a utilizar en la síntesis (se conserva el valor por defecto de 10 ns para obtener un estimado del <em>timing</em> comparable con el esperado al cargar el diseño en la taejta).
+
+* En la sección ```Part Selection```, ```Parts```, especificar la tarjeta en la cual se implementará el diseño, en este caso  ```XC7A100TCSG324-1``` .
+
+* Conservar la configuración por defecto en la sección ```Flow Target``` y hacer click en el botón ```Finish ```
 
 ![Device part.](/Imagenes_Readme/Start_HLS.gif)
 
-* Sintetizar el proyecto usando ```Run``` o ```Run C Synthesis ```. Es importante notar que se usa un periodo de 10 ns.
+* Sintetizar el proyecto haciendo click en el botón ```Run``` de la barra superior del Software o  ```Run C Synthesis ``` ubicado en la sección ```Flow Navigator```.
 
-* La síntesis da resultados de timing, latencia y recursos satisfactorios, estos se muestran en la Figura siguiente:
+ Si todo ha ido como corresponde, la síntesis debiese entregar resultados satisfactorios como los que se muestran en la Figura siguiente, cumpliendo con las restricciones de <em>timing</em> (sin <em>slack</em> negativo), y un uso de recursos  fisicamente implementable en la tarjeta de desarrollo a utilizar.
 
 ![Device part.](/Imagenes_Readme/performance_hls.png)
 
@@ -82,7 +87,7 @@ Para reproducir la implementación del coprocesador mediante Vivado se utilizan 
 
 * En ```PROGRAM AND DEBUG``` genera el Bitstream.
 
-* Abrir ```Open Hardware Manager```, ```Open Target```, ```Program Device```.
+* Abrir ```Open Hardware Manager```, ```Open Target`Si ``, ```Program Device```.
 
 * Usando el script de Matlab ```\MATLAB\coprocessorTesting.m``` pruebe los los resultados de la distancia euclidiana para vectores aleatorios.
 
