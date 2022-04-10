@@ -40,9 +40,13 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
 ![Device part.](/Imagenes_Readme/performance_hls.png)
 
- * Para validar el diseño se ejecuta la Cosimulación  haciendo click en botón de ``` Run Cosimulation ``` ubicado en la sección ```Flow Navigator ```. El error esta por debajo del 1%, el cual es debido a que estamso trabajando con numeros enteros comparados con flotantes. La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library)  tambien aumenta este error, el cual se justifica, ya que esta función permite disminuir la latencia del procesador en 16 ciclos. En el caso de usar variables del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta considerablemente.
+ * Para validar el diseño se ejecuta la Cosimulación  haciendo click en botón de ``` Run Cosimulation ``` ubicado en la sección ```Flow Navigator ```.
 
-* Exportar IP usando ```Export RTL```. Esta acción genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrará más adelante.
+  Con este diseño se espera un error debido a que  se está trabajando con datos del tipo entero, y se están comparando con datos flotantes para la validación. Sin embargo el error obtenido se encuentra por debajo del 1%.
+
+ La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library)  tambien afecta a este error, pero su uso se justifica  ya que esta función permite disminuir la latencia del procesador en 16 ciclos respecto a la función ```sqrt``` de la librería ```math.h```que si bien es más precisa impone un <em>overhead</em> a la latencia del sistema. En el caso de usar datos del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta significativamente.
+
+* Exportar IP hacienco click en el botón ```Export RTL``` en la sección ```Flow navigator```. Esta acción genera un archvio .zip, el cual al ser descomprimido puede ser añadido a ```Vivado``` como se mostrará más adelante.
 
 ### Uso de pragmas en Vitis HLS
 
