@@ -2,8 +2,8 @@
 #include <iostream>
 #include <math.h>
 #include "specs.h"
-#include "eucHW.h"
-#include "eucSW.h"
+#include "EucHW.h"
+#include "EucSW.h"
 
 using namespace std;
 

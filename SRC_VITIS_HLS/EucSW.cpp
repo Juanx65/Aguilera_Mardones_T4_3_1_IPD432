@@ -1,4 +1,4 @@
-#include "eucSW.h"
+#include "EucSW.h"
 
 void eucSW (T A[LENGTH], T B[LENGTH],float C[1])
 {
