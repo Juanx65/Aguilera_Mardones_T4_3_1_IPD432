@@ -2,10 +2,6 @@
 
 ### Grupo Juan Aguilera - Ricardo Mardones
 
- <p align="center">
-    <img src="https://78.media.tumblr.com/a2b1c618a96bc1a7f85c0df0c2becbb8/tumblr_mrowch3MIn1sbav3bo1_500.gif">
- </p>
-
 El propósito de este proyecto es el de ilustrar el proceso de diseño de un coprocesador que soporta el cálculo de la distancia euclidiana entre vectores de 1024 palabras de 8 bits cada una.
 El proyecto se desarrolló usando las siguientes herramientas:
 
