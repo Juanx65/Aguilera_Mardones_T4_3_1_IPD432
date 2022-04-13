@@ -170,9 +170,22 @@ Adicionalmente, se programó el script de Matlab ``` \MATLAB\coprocessorTesting_
 
 ### Reporte de frecuencia, latencia y throughtput
 
-El proyecto se implemento con una frecuencia de 100 MHz, como se sugeira en la sintesis de HLS. Los resultados finales muestran que se cumplen todas las restricciones de timepo, logrando un WNS de 0.081 ns, como se muestra en la Figura siguiente:
+#### Frecuencia del reloj
+El proyecto se implemento con una frecuencia de 100 MHz. Los resultados finales muestran que con este valor se  cumplen todas las restricciones de timepo, logrando un WNS de 0.081 ns, como se muestra en la Figura siguiente:
 
 ![Vivado Project IP.](/Imagenes_Readme/time_summary.png)
+
+
+#### Latencia
+Con el diseño implementado se logró una latencia para el desarrollo del cálculo de la distancia euclidiana entre dos vectores de 16 ciclos, donde 6 de esos ciclos corresponden al cálculo de la raiz cuadrada inherente a la operación realizada. Esto se logró medir agregando el IP <em> Intrgrated logic analizer </em> (ILA) al diseño en Vivado. Obteniendo el diagrama temporal que se muestra a continuación.
+
+
+<p align="center">
+  <img src="/Imagenes_Readme/latency_ila.PNG"
+  height="200"
+  width="400">
+</p>
+
 
 ### Uso de recursos
 
