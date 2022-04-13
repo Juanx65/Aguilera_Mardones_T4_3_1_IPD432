@@ -2,10 +2,7 @@
 
 ### Grupo Juan Aguilera - Ricardo Mardones
 
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 El propósito de este proyecto es el de ilustrar el proceso de diseño de un coprocesador que soporta el cálculo de la distancia euclidiana entre vectores de 1024 palabras de 8 bits cada una.
 El proyecto se desarrolló usando las siguientes herramientas:
 
@@ -126,15 +123,11 @@ void eucHW (T A[LENGTH], T B[LENGTH], Tout *C)
 
 
 Para reproducir la implementación del coprocesador mediante Vivado se utilizan los archivos fuente en la carpeta ``` \SRC_VIVADO_DESIGN``` dentro de este repositorio siguiendo las instrucciones mostradas a  continuación:
-<<<<<<< Updated upstream
 
 
-
-##### Crear un proyecto
-=======
 
 ##### Crear un proeycto
->>>>>>> Stashed changes
+
 * Abrir Vivado y crear un nuevo proyecto con ```Create Project```.
 * En la sección ```Project name``` elegir un nombre y directorio para el proyecto. Avanzar.
 * En la secció ```Project type``` conservar las configuraciones por defecto (```RTL project``` marcado y todas las demas casillas desmarcadas).
@@ -144,11 +137,9 @@ Para reproducir la implementación del coprocesador mediante Vivado se utilizan 
 
 ![Vivado Project process.](/Imagenes_Readme/create_vivado_project.gif)
 
-<<<<<<< Updated upstream
-##### Importar un bloque IP al proyecto
-=======
+
 ##### Importar un bloque ip al proyecto
->>>>>>> Stashed changes
+
 * En el menu ```PROJECT MANAGER``` ir a ```IP Catalog```.
 * En la ventana ```IP Catalog``` hacer click derecho y elegir la opcion ```Add Repository...```
 * Elegir la carpeta ```\SRC_VIVADO_DESIGN\IP_SRC_eucHW\eucDistHW_512```. Esta carpeta deberia ser equivalente a la creada en el tutorial en VITIS HLS.
