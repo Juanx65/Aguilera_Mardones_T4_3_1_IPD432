@@ -188,15 +188,19 @@ Con el diseño implementado se logró una latencia para el desarrollo del cálcu
 
 Donde la señal superior indica el comienzo de la operación y la inferior indica cuando esta ya generó el resultado correspondiente.
 
+#### Throughput
+
+Considerando que la frecuencia de reloj utilizada es de 100 Mhz y el procesador tarda 16 ciclos en entregar un resultado, se concluye que el <em>throughtput</em> obtenido es de 62.500.000 resultado/s
 
 
 
 ### Uso de recursos
 
-El uso de recursos se muestra en la Figura siguiente:
+El uso de recursos se muestra en la Figura siguiente:  
 
 ![Vivado Project IP.](/Imagenes_Readme/uso_recursos.png)
 
+Esta utilización se logró con las configuraciones por defecto tanto para síntesis e implementación en Vivado, no fue necesario aplicar optimizaciones de ningún tipo.
 
 
 ### Tiempo de sintesis
@@ -204,3 +208,5 @@ El uso de recursos se muestra en la Figura siguiente:
 * Sintesis (HLS) = 4 minutos 38 segundos
 * Sintesis (Vivado) = 5 minutos 40 segundos
 * Implementacion = 10 minutos 47 segundos
+
+Los tiempos de síntesis e implementación fueron obtenidos directamente del software Vivado, mientras que el tiempo de síntesis del software HLS se obtuvo midiendo el tiempo con un cronómetro externo de forma manual.
