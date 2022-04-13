@@ -186,6 +186,10 @@ Con el diseño implementado se logró una latencia para el desarrollo del cálcu
   width="400">
 </p>
 
+Donde la señal superior indica el comienzo de la operación y la inferior indica cuando esta ya generó el resultado correspondiente.
+
+
+
 
 ### Uso de recursos
 
