@@ -1,34 +1,3 @@
-%%clear all; % borra el workspace
-
-%% Acondicionamiento del workspace
-COM_port = 0; %inicialización auxiliar del puerto serial
-N=1024;  % define el numero de elementos de cada vector
-
-
-%% Creación de los vectores de prueba
-
-%Genera vectores A y B de 1024 elementos con numeros positivos 
-%(puede adaptarse facilmente si usan negativos y positivos).
-
-A=ceil(rand(N,1)*254);
-B=ceil(rand(N,1)*254);
-
-%Guarda vectores A y B (cada uno de una columna de 1024 filas) en un
-%archivo de texto. Cada linea del archivo contiene un elemento.
-h= fopen('VectorA.txt', 'w');
-fprintf(h, '%i\n', A);
-fclose(h);
-
-h= fopen('VectorB.txt', 'w');
-fprintf(h, '%i\n', B);
-fclose(h);
-
-% Calcula valores de referencia resultantes para las operaciones, realizadas en forma local en el host
-sumVec_host = A+B;
-avgVec_host = (A+B)/2;
-man_host = sum(abs(A-B));
-euc_host = sqrt(sum((A-B).^2));
-
 %% Configuración del puerto serial para comunicar host-device
 
 % Primero setear puerto serial
@@ -36,19 +5,58 @@ clear COM_port
 
 port = "COM6"; %modificar esta linea según el puerto serial al que se conectó la tarjeta en su ordenador
 COM_port = serialport(port,115200);
+%% Validación por medio de N calculos de la operación implementada
 
-%%  Almacenamiento de los vectores en BRAM
+N=1024;  % define el numero de elementos de cada vector
+TESTS = 1000; %número de pruebas a realizar
+AVG_ERR = zeros(1,TESTS); %Variable auxiliar para obtener error promedio
+AVG_ERR_PER = zeros(1,TESTS);
 
-%writeVec escribe un vector almacenado en un archivo de texto en la BRAM indicada por medio de la UART
-write2dev('vectorA.txt','BRAMA',COM_port); 
-write2dev('vectorB.txt','BRAMB',COM_port); 
-%% Calculo de la distancia euclidiana entre vectores A y B
-euc_device    = command2dev('eucDist', COM_port); %realiza el calculo de la distancia Euclideana entre dos vectores y envia el resultado por la UART
-%% Validacion.
-%calcula el error entre el resultado esperado de la operación y el obtenido
-%mediante el procesador implementado
 
-euc_diff = abs(euc_host - euc_device)
+for i = 1:TESTS -1
+
+    %creacion de vectores
+    A=ceil(rand(N,1)*254);
+    B=ceil(rand(N,1)*254);
+    
+    %Guarda vectores A y B (cada uno de una columna de 1024 filas) en un
+    %archivo de texto. Cada linea del archivo contiene un elemento.
+    h= fopen('VectorA.txt', 'w');
+    fprintf(h, '%i\n', A);
+    fclose(h);
+
+    h= fopen('VectorB.txt', 'w');
+    fprintf(h, '%i\n', B);
+    fclose(h);
+
+    % Calcula valores de referencia para las operaciones, realizadas en forma local en el host
+    euc_host = sqrt(sum((A-B).^2));
+    
+  
+    %writeVec escribe un vector almacenado en un archivo de texto en la BRAM indicada por medio de la UART
+    write2dev('vectorA.txt','BRAMA',COM_port); 
+    write2dev('vectorB.txt','BRAMB',COM_port); 
+    
+    %realiza el calculo de la distancia Euclidiana entre dos vectores y envia el resultado por la UART
+    euc_device    = command2dev('eucDist', COM_port);
+    
+    euc_diff = abs(euc_host - euc_device);%error
+    euc_diff_perc = 100*(abs(euc_host - euc_device)/euc_device)
+    
+    AVG_ERR(i) = euc_diff;
+    AVG_ERR_PER(i) = euc_diff_perc;
+   
+end
+
+ fprintf("END TESTS");
+%%
+
+avg_err = sum(AVG_ERR)/TESTS;
+avg_err_perc = sum(AVG_ERR_PER)/TESTS;
+
+fprintf("ERROR ACUMULADO: %f\n" ,avg_err );
+fprintf("% ERROR ACUMULADO: %f\n" ,avg_err_perc );
+
 
 
 

@@ -1,26 +1,21 @@
+%% Configuración del puerto serial para comunicar host-device
 
-%% A partir de aca se realizan las operaciones por medio de comandos al coprocesador
-clear all
 % Primero setear puerto serial
-COM_port = serialport("COM8",115200);
+clear COM_port
 
-% Los siguientes comandos son con formato tentativo. 
-% Puede aplicar cambios menores para adaptarlos a su implementacion, lo cual debe quedar claramente documentado.
-% En cualquier caso, debe incluir solo argumentos necesarios para cada operacion. 
-% No aplique aca "parches de software" para cubrir deficiencias en el diseño de hardware.
-% No se aceptarán comentarios del tipo: "hay que poner ese argumento porque sino no funciona", sin una justificacion adecuada.
+port = "COM6"; %modificar esta linea según el puerto serial al que se conectó la tarjeta en su ordenador
+COM_port = serialport(port,115200);
+%% Validación por medio de N calculos de la operación implementada
 
-%% 
 N=1024;  % define el numero de elementos de cada vector
-TESTS = 1000;
-%Genera vectores A y B de 1024 elementos con numeros positivos 
-%(puede adaptarse facilmente si usan negativos y positivos).
+TESTS = 1000; %número de pruebas a realizar
+AVG_ERR = zeros(1,TESTS); %Variable auxiliar para obtener error promedio
+AVG_ERR_PER = zeros(1,TESTS);
 
-AVG_ERR = zeros(1,TESTS);
 
 for i = 1:TESTS -1
 
-    %creaciond e vectores
+    %creacion de vectores
     A=ceil(rand(N,1)*254);
     B=ceil(rand(N,1)*254);
     
@@ -35,9 +30,6 @@ for i = 1:TESTS -1
     fclose(h);
 
     % Calcula valores de referencia para las operaciones, realizadas en forma local en el host
-    % sumVec_host = A+B;
-    % avgVec_host = (A+B)/2;
-    % man_host = sum(abs(A-B));
     euc_host = sqrt(sum((A-B).^2));
     
   
@@ -45,21 +37,25 @@ for i = 1:TESTS -1
     write2dev('vectorA.txt','BRAMA',COM_port); 
     write2dev('vectorB.txt','BRAMB',COM_port); 
     
-    %realiza el calculo de la distancia Euclideana entre dos vectores y envia el resultado por la UART
+    %realiza el calculo de la distancia Euclidiana entre dos vectores y envia el resultado por la UART
     euc_device    = command2dev('eucDist', COM_port);
-
-    euc_diff = abs(euc_host - euc_device);
+    
+    euc_diff = abs(euc_host - euc_device); %error
+    euc_diff_perc = 100*(abs(euc_host - euc_device)/euc_device); %porcentaje de error
+    
     AVG_ERR(i) = euc_diff;
+    AVG_ERR_PER(i) = euc_diff_perc;
    
 end
 
- fprintf("END TESTS");
-
-%%
-avg_err = sum(AVG_ERR)/TESTS
+fprintf("END TESTS \n\n");
 
 
+avg_err = sum(AVG_ERR)/TESTS;
+avg_err_perc = sum(AVG_ERR_PER)/TESTS;
 
+fprintf("ERROR PROMEDIO: %f       \n" ,avg_err);
+fprintf("PORCENTAJE DE ERROR PROMEDIO: %f%% \n" ,avg_err_perc );
 
 
 
