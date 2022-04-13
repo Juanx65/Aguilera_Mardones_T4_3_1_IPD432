@@ -29,8 +29,8 @@ align="center"
   href="https://www.youtube.com/watch?v=QbYGrSMytgY">
   <img src="/Imagenes_Readme/youtube.PNG"
   align="center"
-  height="300"
-  width="660">
+  height="350"
+  width="600">
   </a>
 </p>
 
