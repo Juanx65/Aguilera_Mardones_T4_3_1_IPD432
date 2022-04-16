@@ -67,7 +67,7 @@ Para reproducir la síntesis del coprocesador mediante Vitis HLS se utilizan los
 
   Con este diseño se espera un error debido a que  se está trabajando con datos del tipo entero, y se están comparando con datos flotantes para la validación. Sin embargo el error obtenido se encuentra por debajo del 1%.
 
- La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library)  tambien influye en este error, pero su uso se justifica  ya que esta función permite disminuir la latencia del procesador en 16 ciclos respecto a la función ```sqrt``` de la librería ```math.h```que si bien es más precisa impone un <em>overhead</em> a la latencia del sistema. En el caso de usar datos del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta significativamente.
+ La función ``` hls::sqrt``` perteneciente a la biblioteca [hls_math.h](https://docs.xilinx.com/r/en-US/ug1399-vitis-hls/Vitis-HLS-Math-Library)  tambien influye en este error, pero su uso se justifica  ya que esta función permite disminuir la latencia del procesador en 16 ciclos respecto a la función ```sqrt``` de la librería ```cmath```que si bien es más precisa impone un <em>overhead</em> a la latencia del sistema. En el caso de usar datos del tipo flotantes, el error se reduce casi en su totalidad, pero la latencia aumenta significativamente.
 
 * Exportar IP hacienco click en el botón ```Export RTL``` en la sección ```Flow navigator```. Esta acción genera un archvio .zip, el cual al ser descomprimido puede ser añadido a un proyecto en ```Vivado``` como se mostrará más adelante.
 
