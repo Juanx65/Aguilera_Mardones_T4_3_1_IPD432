@@ -22,8 +22,14 @@ Los tiempos estimados de síntesis e implementación fueron tomados operando en 
 
 #### Video tutorial
 
-
-[![IMAGE ALT TEXT HERE](/Imagenes_Readme/youtube.PNG)](https://www.youtube.com/watch?v=QbYGrSMytgY)
+<div align="center">
+      <a href="https://www.youtube.com/watch?v=QbYGrSMytgY">
+     <img
+      src="/Imagenes_Readme/youtube.PNG"
+      alt="Everything Is AWESOME"
+      style="width:70%;">
+      </a>
+    </div>
 
 #### Procesador de vectores usando HLS para Nexys 4 DDR
 
