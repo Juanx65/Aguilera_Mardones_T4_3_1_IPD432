@@ -79,19 +79,17 @@ En esta sección se explica el uso de los pragmas implementados al realizar la s
 
 * ```pragma ARRAY_PARTITION ```
  Este comando separa un arreglo de datos y genera arreglos más pequeños  o de un solo elemento almacenandolos en bloques de memoria RAM individuales.
-
  Esto mejora el <em>throughtput</em> del diseño, ya que aumenta la cantidad de datos leidos/escritos por cada ciclo de reloj, a costa de requerir más instancias de memorias/registros para almacenar datos.
 
 
 * ```pragma ARRAY_RESHAPE```
-
  Este comando combina los efectos de los dos antes descritos, aplicando una separación del arreglo de entrada en arreglos de un elemento cada uno (```pragma ARRAY_PARTITION ```), y concatena elementos de los arreglos en forma vertical  (```pragma ARRAY_MAP```). De esta forma reduce el uso de bloques de memoria pero preserva el acceso paralelo a los datos.
 
  Sintaxis del comando:
  ```cpp
  #pragma HLS array_reshape variable=<name> <type>  factor=<int>  dim=<int>
  ```
-Esta directiva soporta tres configuraciones para el parámetro ```type```: <em>block, cyclic</em> y <em>complete </em>, y el parámetro ```factor``` especifica la cantidad de grupos en la que se separarán los elementos del arreglo de entrada.  La distribución resultante de los elementos de entrada se muestra en la siguiente  Figura, considedrando un ```factor 2``` como ejemplo.
+ Esta directiva soporta tres configuraciones para el parámetro ```type```: <em>block, cyclic</em> y <em>complete </em>, y el parámetro ```factor``` especifica la cantidad de grupos en la que se separarán los elementos del arreglo de entrada.  La distribución resultante de los elementos de entrada se muestra en la siguiente  Figura, considedrando un ```factor 2``` como ejemplo.
 <p align="center">
   <img src="/Imagenes_Readme/reshape_conf.png">
 </p>
@@ -100,10 +98,8 @@ Esta directiva soporta tres configuraciones para el parámetro ```type```: <em>b
  Esta directiva además, facilitó la integración de este diseño de procesador con el proyecto hecho en Vivado, la cual  que se detalla  más adelante.
 
 * ```pragma UNROLL ```
-
- Esta directiva soporta desenrollamiento total del <em>loop</em>, generando una copia del cuerpo  de este para cada iteración considerada en su declaración, permitiendo que todas las instancias se ejecuten de mandera simultánea, y también soporta desenrollamiento parcial mediante el parámetro ```factor <N> ``` mediante el cual se generan  ```N``` copias del cuerpo del  <em>loop</em> reduciendo el número de iteraciones  a  el numero de iteraciones originales dividido por ```N ```
-
-Se escogió un ```factor 512```como configuración de la directiva para que coincida con la distribución generada por el comando ```ARRAY_RESHAPE```y así aprovechar el paralelismo de manera óptima en cuanto a ingreso de datos y procesamiento de los mismos.
+ Esta directiva soporta desenrollamiento total del <em>loop</em>, generando una copia del cuerpo  de este para cada iteración considerada en su declaración, permitiendo que todas las instancias se ejecuten de mandera simultánea, y también soporta desenrollamiento parcial mediante el parámetro ```factor <N> ``` mediante el cual se generan  ```N``` copias del cuerpo del  <em>loop</em> reduciendo el número de iteraciones  a  el numero de iteraciones originales dividido por ```N ```.
+ Se escogió un ```factor 512```como configuración de la directiva para que coincida con la distribución generada por el comando ```ARRAY_RESHAPE```y así aprovechar el paralelismo de manera óptima en cuanto a ingreso de datos y procesamiento de los mismos.
 
 
 Finalmente la función ```main``` del diseño queda  como  se muestra a continuación:
