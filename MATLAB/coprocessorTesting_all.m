@@ -3,7 +3,7 @@
 % Primero setear puerto serial
 clear COM_port
 
-port = "COM6"; %modificar esta linea según el puerto serial al que se conectó la tarjeta en su ordenador
+port = "COM8"; %modificar esta linea según el puerto serial al que se conectó la tarjeta en su ordenador
 COM_port = serialport(port,115200);
 %% Validación por medio de N calculos de la operación implementada
 
